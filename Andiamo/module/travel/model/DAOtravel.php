@@ -1,0 +1,98 @@
+<?php
+$path = $_SERVER['DOCUMENT_ROOT'] . '/www/Andiamo/';
+  include($path . "model/connect.php");
+
+  class DAOtravel{
+		function insert_travel($datos){
+			$travel=$datos[travel];
+        	$ref=$datos[ref];
+          $type=$datos[type];
+        	$check_in=$datos[check_in];
+        	$check_out=$datos[check_out];
+        	$destination=$datos[destination];
+        	$country=$datos[country];
+        	$price=$datos[price];
+        	$discount=$datos[discount];
+
+          foreach ($datos[services] as $indice) {
+              $services=$services."$indice,";
+            }
+        	$sql = "INSERT INTO travels (ref, type, check_in, check_out, destination, country, services, price, discount)"
+        		. " VALUES ('$ref', '$type', '$check_in', '$check_out', '$destination', '$country', '$services', '$price', '$discount')";
+            // print_r($sql);
+            // die();
+            $conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+			return $res;
+		}
+
+    function update_travel($datos){
+      $travel=$datos[travel];
+        	$ref=$datos[ref];
+          $type=$datos[type];
+        	$check_in=$datos[check_in];
+        	$check_out=$datos[check_out];
+        	$destination=$datos[destination];
+        	$country=$datos[country];
+        	$price=$datos[price];
+        	$discount=$datos[discount];
+
+          foreach ($datos[services] as $indice) {
+              $services=$services."$indice,";
+            }
+
+        	$sql = " UPDATE travels SET ref='$ref', type='$type', check_in='$check_in', check_out='$check_out', destination='$destination',"
+        		. " country='$country', price='$price', discount='$discount', services ='$services' WHERE ref='$ref'";
+
+            $conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+			return $res;
+		}
+
+		function select_all_travels(){
+			$sql = "SELECT * FROM travels ORDER BY id ASC";
+
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+            return $res;
+		}
+
+		function select_travel($ref){
+			$sql = "SELECT * FROM travels WHERE id='$ref'";
+
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql)->fetch_object();
+            Conectar::close($conexion);
+            return $res;
+		}
+
+    function validate_ref($travel){
+      $sql = "SELECT * FROM travels WHERE ref='{$travel['ref']}'";
+
+      $conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql)->fetch_object();
+            Conectar::close($conexion);
+            return $res;
+    }
+
+		function delete_travel($travel){
+			$sql = "DELETE FROM travels WHERE id='$travel'";
+
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+            return $res;
+		}
+
+    // function select_lenguage(){
+		// 	$sql = "SELECT * FROM translates";
+    //
+		// 	$conexion = Conectar::con();
+    //         $res = mysqli_query($conexion, $sql);
+    //         Conectar::close($conexion);
+    //         return $res;
+		// }
+	}
