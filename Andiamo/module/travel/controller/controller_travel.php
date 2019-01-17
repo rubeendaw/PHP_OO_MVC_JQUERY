@@ -1,5 +1,5 @@
 <?php
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/www/Andiamo/';
+  $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
     include($path . "module/travel/model/DAOtravel.php");
 
     switch($_GET['op']){
@@ -30,11 +30,11 @@
 
             if ($_POST){
                 $check = validate_travel();
-                print_r($check);
+                //print_r($check);
                 // $error=$check['error']);
-                // print_r($check['error']);
-                die();
-                // die();
+                // print_r($check['error']['ref']);
+                //die();
+                //die();
                 try{
                     $daotravel = new DAOtravel();
                 	$rdoref = $daotravel->validate_ref($_POST);
@@ -54,7 +54,7 @@
         		    }
 
                 if ($check){
-                    $_SESSION['check']=$_POST;
+                    $check=$_POST;
                     try{
                         $daotravel = new DAOtravel();
     		            $rdo = $daotravel->insert_travel($_POST);
@@ -74,13 +74,12 @@
                 }
             }
             $error_type='';
-            $error_ref='';
+            $error_ref= $check['error']['ref'];
             $error_price='';
             $error_country='';
             $error_destination='';
             $error_discount='';
             $error_servicios='';
-            // $error5=$check;
             include("module/travel/view/create_travel.php");
             break;
 
@@ -176,8 +175,8 @@
     			    echo json_encode("error");
               exit;
     		    }else{
-    		      $travel=get_object_vars($rdo);
-              echo json_encode($travel);
+    		        $travel=get_object_vars($rdo);
+                    echo json_encode($travel);
                 //echo json_encode("error");
               exit;
     		}

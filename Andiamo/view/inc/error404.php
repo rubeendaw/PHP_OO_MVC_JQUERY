@@ -1,2 +1,3 @@
-<img src="view/img/404.jpg">
-<a href="index.php">Volver</a>
+<img src="view/assets/images/error404.gif">
+<br>
+<a class="btn btn-info" href="index.php">Volver</a>

@@ -759,3 +759,7 @@ a {
 .ui-dialog {
   z-index: 10001 !important;
 }
+
+.roundborders {
+	border-radius: 5px;
+}

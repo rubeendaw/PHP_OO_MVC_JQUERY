@@ -1,6 +1,6 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT'] . '/www/Andiamo/';
-  include($path . "model/connect.php");
+$path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
+include($path . "model/connect.php");
 
   class DAOtravel{
 		function insert_travel($datos){
@@ -12,13 +12,14 @@ $path = $_SERVER['DOCUMENT_ROOT'] . '/www/Andiamo/';
         	$destination=$datos[destination];
         	$country=$datos[country];
         	$price=$datos[price];
-        	$discount=$datos[discount];
+          $discount=$datos[discount];
+          $img=$datos[img];
 
           foreach ($datos[services] as $indice) {
               $services=$services."$indice,";
             }
-        	$sql = "INSERT INTO travels (ref, type, check_in, check_out, destination, country, services, price, discount)"
-        		. " VALUES ('$ref', '$type', '$check_in', '$check_out', '$destination', '$country', '$services', '$price', '$discount')";
+        	$sql = "INSERT INTO travels (ref, type, check_in, check_out, destination, country, services, price, discount, img)"
+        		. " VALUES ('$ref', '$type', '$check_in', '$check_out', '$destination', '$country', '$services', '$price', '$discount', '$img')";
             // print_r($sql);
             // die();
             $conexion = Conectar::con();
@@ -36,14 +37,15 @@ $path = $_SERVER['DOCUMENT_ROOT'] . '/www/Andiamo/';
         	$destination=$datos[destination];
         	$country=$datos[country];
         	$price=$datos[price];
-        	$discount=$datos[discount];
+          $discount=$datos[discount];
+          $img=$datos[img];
 
           foreach ($datos[services] as $indice) {
               $services=$services."$indice,";
             }
 
         	$sql = " UPDATE travels SET ref='$ref', type='$type', check_in='$check_in', check_out='$check_out', destination='$destination',"
-        		. " country='$country', price='$price', discount='$discount', services ='$services' WHERE ref='$ref'";
+        		. " country='$country', price='$price', discount='$discount', services ='$services', img='$img' WHERE ref='$ref'";
 
             $conexion = Conectar::con();
             $res = mysqli_query($conexion, $sql);

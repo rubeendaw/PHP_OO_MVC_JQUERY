@@ -2,16 +2,17 @@
   <div class="row">
     <!-- <div class="col-md-6"> -->
 	    <br/>
-    <div id="contenido">
+    <div id="contenido" style="margin: auto;">
         <form autocomplete="on" method="post" name="alta_travel" id="alta_travel">
             <?php
         		if(isset($error)){
-        			print ("<BR><span CLASS='styerror'>" . "* ".$error . "</span><br/>");
+                    print ("<BR><span CLASS='styerror'>" . "* ".$error . "</span><br/>");
         		}?>
-            <h1>Viaje nuevo</h1>
+            <h1 class="text-black" style="text-align: center;" >Viaje nuevo</h1>
+            <div class="p-3 p-lg-5 border">
             <table border='0'>
               <tr>
-                  <td>Tipo de viaje: </td>
+                  <td class="text-black">Tipo de viaje: </td>
                   <td>
                       <input type="radio" id="type" name="type" checked="checked" value="Nacional"/> Nacional
                       <input type="radio" id="type" name="type" value="Europeo"/> Europeo
@@ -27,32 +28,37 @@
                   </td>
                 </tr>
                 <tr>
-                    <td>Referencia: </td>
-                    <td><input type="text" id="ref" name="ref" placeholder="Ej: 21" value=""/></td>
+                    <td class="text-black" >Referencia: </td>
+                    <td><input class="form-control" type="text" id="ref" name="ref" placeholder="Ej: 21" value=""/></td>
                     <td><font color="red">
                         <span id="error_ref" class="error">
                             <?php
-                                echo "$error_ref";
+                            echo "<pre>";
+                            //print_r($_POST);
+                            //print_r($error);
+                            //print_r($error_ref);
+                            echo "</pre><br>";
+                                // echo $_POST?$_POST['ref']:"";
                             ?>
                         </span>
                     </font>
                   </td>
                 </tr>
                 <tr>
-                    <td>Precio: </td>
-                    <td><input type="text" id="price" name="price" placeholder="Ej: 200" value=""/></td>
+                    <td class="text-black">Precio: </td>
+                    <td><input class="form-control type="text" id="price" name="price" placeholder="Ej: 200" value=""/></td>
                     <td><font color="red">
                         <span id="error_price" class="error">
                             <?php
-                                print_r($error['price']);
+                                print_r($error_price);
                             ?>
                         </span>
                     </font>
                     </td>
                 </tr>
                 <tr>
-                    <td>Pais: </td>
-                    <td><input type="text" id="country" name="country" placeholder="Ej: Italia" value=""/></td>
+                    <td class="text-black">Pais: </td>
+                    <td><input class="form-control type="text" id="country" name="country" placeholder="Ej: Italia" value=""/></td>
                     <td><font color="red">
                         <span id="error_country" class="error">
                             <?php
@@ -63,8 +69,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Destino: </td>
-                    <td><input type="text" id="destination" name="destination" placeholder="Ej: Venecia" value=""/></td>
+                    <td class="text-black">Destino: </td>
+                    <td><input class="form-control type="text" id="destination" name="destination" placeholder="Ej: Venecia" value=""/></td>
                     <td><font color="red">
                         <span id="error_destination" class="error">
                             <?php
@@ -75,7 +81,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Descuento: </td>
+                    <td class="text-black">Descuento: </td>
                     <td><select id="discount" name="discount">
                         <option value="5">5</option>
                         <option value="10">10</option>
@@ -93,7 +99,7 @@
                   </td>
                 </tr>
                 <tr>
-                    <td>Servicios: </td>
+                    <td class="text-black">Servicios: </td>
                     <td>
                         <input type="checkbox" id= "services" name="services" value="wifi"/>Wifi
                         <input type="checkbox" id= "services" name="services" value="piscina"/>Piscina
@@ -117,6 +123,7 @@
                     <td align="right"><a class="btn btn-danger" href="index.php?page=controller_travel&op=list">Volver</a></td>
                 </tr>
             </table>
+            </div>
         </form>
     </div>
   </div>
