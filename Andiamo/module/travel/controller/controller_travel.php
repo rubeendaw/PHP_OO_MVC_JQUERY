@@ -161,6 +161,31 @@
             include("module/travel/view/delete_travel.php");
             break;
 
+            case 'delete_all';
+            if (isset($_POST['delete_all'])){
+                try{
+                    $daotravel = new DAOtravel();
+                	$rdo = $daotravel->delete_all_travel();
+                  //var_dump($rdo);
+                  // exit();
+                }catch (Exception $e){
+                    $callback = 'index.php?page=503';
+    			    die('<script>window.location.href="'.$callback .'";</script>');
+                }
+
+            	if($rdo){
+        			//echo '<script language="javascript">alert("Borrado en la base de datos correctamente")</script>';
+        			$callback = 'index.php?page=controller_travel&op=list';
+    			    die('<script>window.location.href="'.$callback .'";</script>');
+        		}else{
+        			$callback = 'index.php?page=503';
+			        die('<script>window.location.href="'.$callback .'";</script>');
+        		}
+            }
+
+            include("module/travel/view/delete_all_travel.php");
+            break;
+
         case 'read_modal':
             // echo $_GET["modal"];
             // exit;

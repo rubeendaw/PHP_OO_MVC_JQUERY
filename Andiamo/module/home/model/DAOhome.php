@@ -4,7 +4,7 @@ include($path . "model/connect.php");
 
 	class DAOhome{
 		function select_all_travels(){
-			$sql = "SELECT * FROM travels ORDER BY id ASC";
+			$sql = "SELECT * FROM travels ORDER BY likes DESC LIMIT 8 ";
 
 			$conexion = Conectar::con();
             $res = mysqli_query($conexion, $sql);

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-7 site-section-heading text-center pt-4">
-        <h2>Los Más Destacados</h2>
+          <h2>Los Más Destacados</h2>
       </div>
     </div>
     <div class="row">
@@ -22,6 +22,7 @@
                     echo '<h3><a href="#">'. $row['country'] . '</a></h3>';
                     echo '<p class="mb-0">'. $row['destination'] . '</p>';
                     echo '<p class="text-primary font-weight-bold">'. $row['price'] . '€</p>';
+                    echo '<a class="btn text-white btn-info">Like</a>';
                   echo '</div>';
                 echo '</div>';
               echo '</div>';

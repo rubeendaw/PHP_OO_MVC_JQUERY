@@ -87,6 +87,14 @@ include($path . "model/connect.php");
             $res = mysqli_query($conexion, $sql);
             Conectar::close($conexion);
             return $res;
+    }
+    function delete_all_travel(){
+			$sql = "DELETE FROM travels";
+
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+            return $res;
 		}
 
     // function select_lenguage(){

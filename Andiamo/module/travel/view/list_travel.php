@@ -27,13 +27,9 @@
                     	   	echo '<td class="text-center" width=100>'. $row['ref'] . '</td>';
                     	   	echo '<td class="text-center" width=75>'. $row['type'] . '</td>';
                     	   	echo '<td class="text-center" width=50>'. $row['destination'] . '</td>';
-                          echo '<td class="text-center" width=50>'. $row['price'] . '</td>';
+                            echo '<td class="text-center" width=50>'. $row['price'] . '</td>';
                     	   	echo '<td class="text-center" width=150>';
-                    	   	// echo '<a class="btn btn-primary" href="index.php?page=controller_smartphone&op=read&id='.$row['id'].'" data-toggle="modal" data-target="#modalForm">Read</a>';
-                          // echo '<a class="btn btn-primary ref" id="'.$row['id'].'">Read</a>';
-                          echo ("<a class='ref btn btn-primary' id='".$row['id']."'>R</a>");
-                          // echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                          // print ("<div class='imei' id='".$row['imei']."'>Read</div>");
+                            echo ("<a class='ref btn btn-primary' id='".$row['id']."'>R</a>");
                     	   	echo '&nbsp;';
                     	   	echo '<a class="btn btn-success" href="index.php?page=controller_travel&op=update&id='.$row['id'].'">U</a>';
                     	   	echo '&nbsp;';
@@ -45,11 +41,12 @@
                 ?>
               </tbody>
             </table>
+            <a class="delall btn btn-danger" href="index.php?page=controller_travel&op=delete_all">Borrar Todo</a>
     	</div>
     </div>
 </div>
 
-<!-- modal window -->
+<!-- modal reed -->
 <section id="travel_modal">
     <div id="details_travel" style="display: none;">
         <div id="details">
@@ -67,6 +64,7 @@
         </div>
     </div>
 </section>
+
 <script>
     $(document).ready(function() {
           $('#lista').DataTable();
