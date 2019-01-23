@@ -35,8 +35,6 @@
         <h3 class="footer-heading mb-4">Promo</h3>
         <a href="#" class="block-6">
           <img src="view/assets/images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-          <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-          <p>Promo from  nuary 15 &mdash; 25, 2019</p>
         </a>
       </div>
       <div class="col-md-6 col-lg-3">
@@ -47,16 +45,6 @@
             <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
             <li class="email">emailaddress@domain.com</li>
           </ul>
-        </div>
-
-        <div class="block-7">
-          <form action="#" method="post">
-            <label for="email_subscribe" class="footer-heading">Subscribe</label>
-            <div class="form-group">
-              <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-              <input type="submit" class="btn btn-sm btn-primary" value="Send">
-            </div>
-          </form>
         </div>
       </div>
     </div>

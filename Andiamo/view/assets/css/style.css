@@ -767,3 +767,11 @@ a {
 .redheart:hover{
   color: red !important;
 }
+.carousel-inner{
+  max-height: 340px;
+}
+
+#myCarousel {
+  margin: auto;
+  max-width: 990px;
+}
