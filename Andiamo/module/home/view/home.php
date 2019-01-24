@@ -9,15 +9,15 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="view/assets/images/carousel1.jpg" alt="Los Angeles">
+      <img src="view/assets/images/carousel1.jpg">
     </div>
 
     <div class="item">
-      <img src="view/assets/images/carousel2.png" alt="Chicago">
+      <img src="view/assets/images/carousel2.png">
     </div>
 
     <div class="item">
-      <img src="view/assets/images/carousel3.jpg" alt="New York">
+      <img src="view/assets/images/carousel3.jpg">
     </div>
   </div>
 
@@ -31,12 +31,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
-
-
-
 <div class="site-section block-3 site-blocks-2 bg-light">
   <div class="container">
     <div class="row justify-content-center">
