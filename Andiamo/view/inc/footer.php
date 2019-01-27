@@ -34,16 +34,17 @@
       <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
         <h3 class="footer-heading mb-4">Promo</h3>
         <a href="#" class="block-6">
-          <img src="view/assets/images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+          <img src="view/assets/images/andiamo_footer.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
         </a>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="block-5 mb-5">
           <h3 class="footer-heading mb-4">Contact Info</h3>
           <ul class="list-unstyled">
-            <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
+            <li class="address">Ontinyent, 46870 (Valencia)</li>
             <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-            <li class="email">emailaddress@domain.com</li>
+            <li class="email">contacto@andiamo.com</li>
+            <li class="email">sugerencias@andiamo.com</li>
           </ul>
         </div>
       </div>

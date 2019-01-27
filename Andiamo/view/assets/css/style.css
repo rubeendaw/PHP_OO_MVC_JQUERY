@@ -775,3 +775,9 @@ a {
   margin: auto;
   max-width: 990px;
 }
+
+ #map {
+   height: 320px;
+   width: 90%;
+   margin: 0 auto;
+ }

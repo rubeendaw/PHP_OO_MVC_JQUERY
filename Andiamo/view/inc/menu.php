@@ -59,7 +59,7 @@
         <li><a href="index.php?page=controller_home&op=list">Inicio</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="index.php?page=controller_travel&op=list">CRUD</a></li>
-        <li><a href="index.php?page=contact">Contact</a></li>
+        <li><a href="index.php?page=controller_contact&op=view">Contact</a></li>
         
         <!-- <li><form method="POST">
                 	<select name="lang">
