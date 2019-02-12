@@ -11,16 +11,16 @@ if ((isset($_GET['page'])) && ($_GET['page']==="controller_travel") ){
     include("view/inc/top_page.php");
 }
 
-require('translations/lang.php');
-   	if (isset($_POST["lang"])){
-   		  $lang = $_POST["lang"];
-   		  $_SESSION ["lang"] = $lang;
-   	}
-    if(isset($_SESSION['lang'])){
-	      include ('translations/lang.php');
-    }else{
-        include ('translations/es.php');
-   	}
+// require('translations/lang.php');
+//    	if (isset($_POST["lang"])){
+//    		  $lang = $_POST["lang"];
+//    		  $_SESSION ["lang"] = $lang;
+//    	}
+//     if(isset($_SESSION['lang'])){
+// 	      include ('translations/lang.php');
+//     }else{
+//         include ('translations/es.php');
+//    	}
 
 ?>
   <div class="site-wrap">

@@ -781,3 +781,31 @@ a {
    width: 90%;
    margin: 0 auto;
  }
+
+ .drop1 {
+  /* width: 10%; */
+  float: left;
+  margin-top: 5%;
+  margin-right: 2%;
+}
+.drop2 {
+  /* width: 10%; */
+  float: left;
+  margin-right: 2%;
+  margin-top: 5%;
+}
+.auto {
+  /* width: 33%; */
+  float: left;
+  /* margin-right: 2%; */
+  margin-top: 5%;
+}
+
+#prueba {
+  width: 31%;
+  float: left;
+  margin: 1%;
+}
+#list_travels {
+  min-width: 100%;
+}

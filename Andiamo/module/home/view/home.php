@@ -63,6 +63,22 @@
         }
       ?>
         </div>
+        <div class="container">
+		      <div class="drop1">
+			      <select id="cboTypes">
+				      <option value="0">Type</option>
+			      </select>
+		      </div>
+          <div class="drop2">
+            <select id="cboCountry">
+              <option value="0">Country</option>
+            </select>
+          </div>
+          <div class="auto">
+            <input  type="text" size="40" id="service" name="service" />
+            <div id="suggestions"></div>
+          </div>
+	      </div>
       </div>
     </div>
   </div>

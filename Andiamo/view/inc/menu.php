@@ -26,6 +26,9 @@
                 	  	<option value="val">Valencià</option>
                   </select>
 	            </li> -->
+              <a id="spanish"><img src="view/assets/images/flags/es.png" width="22px"></a>
+              <a id="english"><img src="view/assets/images/flags/en.png" width="22px"></a>
+              <a id="valencia"><img src="view/assets/images/flags/ca.png" width="22px"></a>
               <li><a href="#"><span class="icon icon-person"></span></a></li>
               <li><a class="redheart" href="#"><span class="icon icon-heart"></span></a></li>
               <li>
@@ -56,10 +59,10 @@
             </li>
           </ul>
         </li> -->
-        <li><a href="index.php?page=controller_home&op=list">Inicio</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="index.php?page=controller_travel&op=list">CRUD</a></li>
-        <li><a href="index.php?page=controller_contact&op=view">Contact</a></li>
+        <li><a data-tr="home" href="index.php?page=controller_home&op=list"></a></li>
+        <li><a data-tr="shop" href="index.php?page=controller_shop&op=list"></a></li>
+        <li><a data-tr="crud" href="index.php?page=controller_travel&op=list"></a></li>
+        <li><a data-tr="contact" href="index.php?page=controller_contact&op=view"></a></li>
         
         <!-- <li><form method="POST">
                 	<select name="lang">
