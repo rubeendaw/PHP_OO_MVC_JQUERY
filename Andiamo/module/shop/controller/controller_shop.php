@@ -3,14 +3,18 @@
   include($path . "module/shop/model/DAOshop.php");
     if (!isset($_SESSION)){
       session_start();
-    }
+		}
+		if (isset($_SESSION["tiempo"])) {  
+	    $_SESSION["tiempo"] = time();
+		}
     switch($_GET['op']){
 
         case 'list':
             include("module/shop/view/shop.php");
 				break;
 				
-        case 'details':
+				case 'details':
+						$_SESSION['id']=$_GET['id'];
             include("module/shop/view/shop_details.php");
         break;
 
@@ -34,21 +38,22 @@
 					}
 				break;
 
-        // case 'data_shop_details':
-				// 	try{
-				// 		$daoshop = new DAOshop();
-				// 		$rdo = $daoshop->select_travel($_GET['details']);
-				// 		$travel=get_object_vars($rdo);
-				// 	} catch (Exception $e) {
-				// 		echo json_encode("error");
-				// 	}
-					
-				// 	if (!$rdo) {
-				// 		echo json_encode("error");
-				// 	}else{
-				// 		echo json_encode($rdo);
-				// 		exit();
-				// break;
+			case 'data_shop_details':
+				try{
+					$daoshop = new DAOshop();
+					$rdo = $daoshop->select_travel($_SESSION['id']);
+					$travel=get_object_vars($rdo);
+				} catch (Exception $e) {
+					echo json_encode("error");
+				}
+				
+				if (!$rdo) {
+					echo json_encode("error");
+				}else{
+					echo json_encode($rdo);
+					exit();
+				}
+			break;
 
 		case 'data_shop2':
 			try {

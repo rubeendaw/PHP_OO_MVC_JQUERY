@@ -18,7 +18,10 @@
     <script src="module/shop/model/shop.js"></script>
     <script src="module/home/model/home.js"></script>
     <script src="translations/lang.js"></script>
+    <script src="view/assets/js/ini.js"></script>
     <script src="view/assets/js/jqueryTranslator.js"></script>
+    <script src="module/login/model/validate_login.js"></script>
+    <script src="module/cart/model/cart.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script> -->
   </footer>

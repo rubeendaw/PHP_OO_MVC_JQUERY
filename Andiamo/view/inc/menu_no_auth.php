@@ -29,7 +29,7 @@
               <a id="spanish"><img src="view/assets/images/flags/es.png" width="22px"></a>
               <a id="english"><img src="view/assets/images/flags/en.png" width="22px"></a>
               <a id="valencia"><img src="view/assets/images/flags/ca.png" width="22px"></a>
-              <li><a href="index.php?page=controller_login&op=view"><span class="icon icon-person"></span></a></li>
+              <li><a href="#"><span class="icon icon-person"></span></a></li>
               <li><a class="redheart" href="#"><span class="icon icon-heart"></span></a></li>
               <li>
                 <a href="index.php?page=controller_cart&op=view" class="site-cart">
@@ -37,7 +37,9 @@
                   <!-- <span class="count">2</span> -->
                 </a>
               </li>
-              <li class="d-inline-block d-md-none ml-md-0"><a href="" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+              <li id="avatar"></li>
+              <li><a class="redheart" href="index.php?page=controller_login&op=logout"><span class="icon icon-exit_to_app"></span></a></li>
+              <li class="d-inline-block d-md-none ml-md-0"><a href="index.php?page=controller_cart&op=view" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
             </ul>
           </div>
         </div>

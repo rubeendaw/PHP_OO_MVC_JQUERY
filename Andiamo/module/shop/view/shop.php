@@ -52,7 +52,7 @@
                     <p class="text-primary font-weight-bold">$50</p>
                   </div> -->
                 <!-- </div> -->
-              </div>  
+              </div> 
         </div>
       </div>
 
@@ -108,7 +108,11 @@
   </div>
   <div>
     <h1>Busqueda en APIs</h1>
-      <input type="text" size="23" id="origin" name="api" />
+    <select id="origin">
+				      <option value="MAD">Madrid</option>
+				      <option value="LON">Londres</option>
+				      <option value="MIA">Miami</option>
+			</select>
       <input type="text" size="23" id="price" name="api" />
       <select id="currency">
 				      <option value="EUR">Euro</option>
@@ -119,3 +123,5 @@
       <div id="results"></div>
   </div>
 </div>
+
+<div id="details"> 

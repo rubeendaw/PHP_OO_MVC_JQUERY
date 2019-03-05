@@ -1,7 +1,10 @@
 <?php
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
     include($path . "module/home/model/DAOhome.php");
-
+    if (isset($_SESSION["tiempo"])) {  
+	    $_SESSION["tiempo"] = time();
+    }
+    
     switch($_GET['op']){
         case 'list':
             try{

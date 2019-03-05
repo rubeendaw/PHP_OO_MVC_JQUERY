@@ -9,12 +9,13 @@ $(document).ready(function(){
               ElementDiv.id = "list_travels";
               ElementDiv.innerHTML = "<div id='prueba' class='block-4 text-center border'>"
                                       + "<figure class='block-4-image'>"
-                                      + "<a id='details'><img class='img-fluid' src=view/assets/images/" + list.img + "></a>"
+                                      + "<a class='details' id="+ list.id + "><img class='img-fluid' src=view/assets/images/" + list.img + "></a>"
                                       + "</figure>" 
                                       + "<div class='block-4-text p-4'>"
-                                      + "<h3><a>" + list.destination + "</a></h3>"
+                                      + "<h3><a class='details'>" + list.destination + "</a></h3>"
                                       + "<p class='mb-0'>" + list.country + "</p>"
                                       + "<p class='text-primary font-weight-bold'>" + list.price +"€</p>"
+                                      + "<span onclick='InsertCarr()' class='icon icon-shopping_cart'></span>"
                                       + "</div>";
                                       + "</div>";
               document.getElementById("list_travels").appendChild(ElementDiv);
@@ -27,18 +28,19 @@ $(document).ready(function(){
     if (document.getElementById('container_travels2')) {
       $.get("module/shop/controller/controller_shop.php?&op=data_shop2", function(data,status) {
         var json = JSON.parse(data);
-        // console.log(json);
-             $.each(json, function(index, list) {
+        $.each(json, function(index, list) {
+          // console.log(list.id);
               var ElementDiv = document.createElement('div');
               ElementDiv.id = "list_travels";
               ElementDiv.innerHTML = "<div id='prueba' class='block-4 text-center border'>"
                                       + "<figure class='block-4-image'>"
-                                      + "<a><img class='img-fluid' src=view/assets/images/" + list.img + "></a>"
+                                      + "<a class='details' id="+ list.id + "><img class='img-fluid' src=view/assets/images/" + list.img + "></a>"
                                       + "</figure>" 
                                       + "<div class='block-4-text p-4'>"
                                       + "<h3><a>" + list.destination + "</a></h3>"
                                       + "<p class='mb-0'>" + list.country + "</p>"
-                                      + "<p class='text-primary font-weight-bold'>" + list.price +"€</p>"
+                                      + "<p class='icon icon-shopping_cart text-primary font-weight-bold'>" + list.price +"€</p>"
+                                      + "<span onclick='InsertCarr()' class='icon icon-shopping_cart'></span>"
                                       + "</div>";
                                       + "</div>";
               document.getElementById("list_travels").appendChild(ElementDiv);
@@ -47,31 +49,29 @@ $(document).ready(function(){
           $( ".qtyprod" ).append("<option value='" + i +"'>" + i +"</option>");
         }
       });
+    }
+    
+    
+    if (document.getElementById('details')) {
+      $.get("module/shop/controller/controller_shop.php?&op=data_shop_details", function(data,status) {
+        var json = JSON.parse(data);
+        console.log(json);
+        // var id = JSON.parse(data)
+        var ElementDiv = document.createElement('div');
+              ElementDiv.id = "details";
+              ElementDiv.innerHTML = "<div class='col-md-6'>"
+                                    + "<img src=view/assets/images/" + json.img + " alt='Image' class='img-fluid'>"
+                                    + "</div>"
+                                    + "<div class='col-md-6'>"
+                                    + "<h2 class='text-black'>"+ json.destination +"</h2>"
+                                    + "<p>" + json.country + "</p>"
+                                    + "<p class='mb-4'>Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>"
+                                    + "<p><strong class='icon icon-shopping_cart text-primary h4'>" + json.price + "€</strong></p>"
+                                    + "<span onclick='InsertCarr()' class='icon icon-shopping_cart'></span>"
+                                    + "</div>"
+              document.getElementById("details").appendChild(ElementDiv);
+            });
   }
-
-
-//   $('#details').click(function () {
-//     $("#modal_products").empty();
-//     $("#exampleModalLabel").empty();
-//     var id = this.getAttribute('id');
-      
-//     $.get("module/shop/controller/controller_shop.php?op=data_shop_details&details=" + id, function (data, status) {
-//           var json = JSON.parse(data);
-//           $("#exampleModalLabel").append("Zapatillas " + json.brand + " " + json.model);
-//           var ElementDiv = document.createElement('div');
-//           ElementDiv.id = "modal_shop";
-//           ElementDiv.innerHTML =  "<div style='width:46%; display:inline-block;' class='provamodal'><img src='" + json.img + "' style='width:100%;'></div>" +
-//                                   "<div style='width:44%; display:inline-block; vertical-align:top; font-size:30px; margin-left:10%;'><div style='width:100%;'> Price: " + json.price + "€</div>" +
-//                                   "<div style='width:100%;'> Size: " + json.size + "</div><div style='font-size: 18px;text-align:  justify;margin-top: 44px;margin-right: 33px'>" + json.description + "</div>" +
-//                                   "<select id='qty" + json.cref + "modal' style='width: 60%; font-size:20px; margin-top: 53px; border: solid 3px #bbbbbb; background-color: #808080bd; color: white;'></select></div>";
-//           document.getElementById("modal_products").appendChild(ElementDiv);
-
-//           for(i=1;i<=20;i++){
-//             $( "#qty" + json.cref + "modal" ).append("<option value='" + i +"'>" + i +"</option>");
-//           }
-//           $(".addmodal").attr("id",json.cref);
-//     });
-// });
 
 
   $('#buscar').click(function () {
@@ -81,22 +81,23 @@ $(document).ready(function(){
 
       $.ajax({
         type: "GET",
-        // url: 'https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=' + origin + '&oneWay=false&nonStop=false&maxPrice=' + price + '&currency=' + currency,
-        url: 'https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=LON',
+        // https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=LON&ratings=4
+        // url: 'https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=' + origin + '&oneWay=false&nonStop=false&maxPrice=' + price + '&currency=' + currency,
+        url: 'https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=LON&ratings=4',
         crossDomain: true,
         contentType: "application/json",
         beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Bearer 0qcxGomY7PPWcAF466TthNnNllU0');
+            xhr.setRequestHeader('Authorization', 'Bearer TiGzTii26TwsnGSIbK11lAfvHiyp');
         },
         success: function(data){
-            // console.log(data[available]);
-            // x = JSON.stringify(data);
-            console.log(data);
+          // console.log(data["data"]["1"]["hotel"]["media"]["0"]["uri"]);
               var html = [];
               html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
-                    for (var i = 0; i < 10; ++i)   {
-                      html.push('<tr><td>' + '<img src="' + data[i]['type'] + '" border="0">' + '</td></tr>');
-              }
+                $.each(data['data'], function(index, list) {
+                  // console.log(list.hotel.name);
+                  html.push("<p>" + list.hotel.name + "</p>");
+                      // html.push('<tr><td>' + '<p>' + list.hotel.name + '"</p> '+' border="0">' + '</td></tr>');
+              });
               html.push('</tbody></table>');
               document.getElementById("results").innerHTML = html.join("");
         },
@@ -105,5 +106,14 @@ $(document).ready(function(){
         }
     });
 
+  });
+
+
+
+  $(document).on('click','.details',function () {
+    var id = this.getAttribute('id');
+    // console.log(data);
+    window.location.href = 'index.php?page=controller_shop&op=details&id=' + id;
+    // console.log(id);
   });
 });

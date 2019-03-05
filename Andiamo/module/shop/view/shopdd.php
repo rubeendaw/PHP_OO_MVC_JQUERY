@@ -119,3 +119,4 @@
       <div id="results"></div>
   </div>
 </div>
+<div id="details">

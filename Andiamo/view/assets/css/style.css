@@ -809,3 +809,21 @@ a {
 #list_travels {
   min-width: 100%;
 }
+.login {
+  float: left;
+  padding-right: 20%;
+  /* padding: .5em; */
+}
+.register {
+  float: left;
+  padding-right: .5em;
+}
+.styerror {
+    color: #CC0000;
+    font-style: oblique;
+    font-weight: normal;
+}
+
+#avatar_img {
+  border-radius: 35%;
+}

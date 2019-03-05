@@ -1,7 +1,10 @@
 <?php
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
     include($path . "module/travel/model/DAOtravel.php");
-
+    if (isset($_SESSION["tiempo"])) {  
+	    $_SESSION["tiempo"] = time();
+	}
+    if (isset($_SESSION['type_user']) && ($_SESSION['type_user'] == "1")){
     switch($_GET['op']){
         case 'list':
             try{
@@ -210,4 +213,8 @@
             default;
                 include("view/inc/error404.php");
                 break;
+    }
+    }else{
+        $callback = 'index.php?page=404';
+    	die('<script>window.location.href="'.$callback .'";</script>');
     }
