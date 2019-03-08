@@ -1,6 +1,7 @@
 <?php
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
     include($path . "module/travel/model/DAOtravel.php");
+    @session_start();
     if (isset($_SESSION["tiempo"])) {  
 	    $_SESSION["tiempo"] = time();
 	}
@@ -58,6 +59,9 @@
 
                 if ($check){
                     $check=$_POST;
+                    // echo "<script>console.log('Hola: ". $_POST['date'] . "');</script>";
+                    // echo "<script>console.log('Hola: ". $_POST['services'] . "');</script>";
+                    // exit();
                     try{
                         $daotravel = new DAOtravel();
     		            $rdo = $daotravel->insert_travel($_POST);
@@ -135,6 +139,7 @@
           $error_destination='';
           $error_discount='';
           $error_services='';
+          $error_img='';
         	    include("module/travel/view/update_travel.php");
     		}
             break;
@@ -196,11 +201,11 @@
                 $daotravel = new DAOtravel();
             	  $rdo = $daotravel->select_travel($_GET['modal']);
             }catch (Exception $e){
-              echo json_encode("error");
-              exit;
+                echo json_encode("error");
+                exit;
             }
             if(!$rdo){
-    			    echo json_encode("error");
+    			echo json_encode("error");
               exit;
     		    }else{
     		        $travel=get_object_vars($rdo);

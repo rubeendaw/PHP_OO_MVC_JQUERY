@@ -55,7 +55,7 @@ $(document).ready(function(){
     if (document.getElementById('details')) {
       $.get("module/shop/controller/controller_shop.php?&op=data_shop_details", function(data,status) {
         var json = JSON.parse(data);
-        console.log(json);
+        // console.log(json);
         // var id = JSON.parse(data)
         var ElementDiv = document.createElement('div');
               ElementDiv.id = "details";
@@ -76,18 +76,17 @@ $(document).ready(function(){
 
   $('#buscar').click(function () {
       var origin = $('#origin').val();
-      var price = $('#price').val();
-      var currency = $('#currency').val();
+      var rating = $('#rating').val();
 
       $.ajax({
         type: "GET",
         // https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=LON&ratings=4
         // url: 'https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=' + origin + '&oneWay=false&nonStop=false&maxPrice=' + price + '&currency=' + currency,
-        url: 'https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=LON&ratings=4',
+        url: 'https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=' + origin + '&ratings=' + rating + '',
         crossDomain: true,
         contentType: "application/json",
         beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Bearer TiGzTii26TwsnGSIbK11lAfvHiyp');
+            xhr.setRequestHeader('Authorization', 'Bearer w28bpZWjTMtmciq4pFm73LL2rvo5');
         },
         success: function(data){
           // console.log(data["data"]["1"]["hotel"]["media"]["0"]["uri"]);
@@ -95,7 +94,12 @@ $(document).ready(function(){
               html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
                 $.each(data['data'], function(index, list) {
                   // console.log(list.hotel.name);
-                  html.push("<p>" + list.hotel.name + "</p>");
+                  html.push("<h3>" + list.hotel.name + "</h3>"
+                          + "<p>Estrellas: " + list.hotel.rating + "</p>"
+                          + "<p>Contacto:</p>"
+                          + "<p>Telefono: " + list.hotel.contact.phone + "</p>"
+                          + "<p>Fax: " + list.hotel.contact.fax + "</p>"
+                          + "</br>");
                       // html.push('<tr><td>' + '<p>' + list.hotel.name + '"</p> '+' border="0">' + '</td></tr>');
               });
               html.push('</tbody></table>');

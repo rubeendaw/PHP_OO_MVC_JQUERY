@@ -55,8 +55,8 @@
                     echo '<h3><a href="#">'. $row['country'] . '</a></h3>';
                     echo '<p class="mb-0">'. $row['destination'] . '</p>';
                     echo '<p class="text-primary font-weight-bold">'. $row['price'] . '€</p>';
-                    echo '<button class="btn btn-success" onclick="InsertCarr()">Add<span class="icon icon-shopping_cart"></span></button>';
-                    echo '<a class="btn text-white btn-info">Like</a>';
+                    echo '<button id="'. $row['id'] . '" class="btn InsertCarr btn-success">Add<span class="icon icon-shopping_cart"></span></button>';
+                    echo '<a id='. $row['id'] .' class="sumlike btn text-white btn-info">Like</a>';
                   echo '</div>';
                 echo '</div>';
               echo '</div>';

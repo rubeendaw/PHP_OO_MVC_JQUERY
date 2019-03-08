@@ -4,16 +4,17 @@ include($path . "model/connect.php");
 
   class DAOtravel{
 		function insert_travel($datos){
-			$travel=$datos[travel];
-        	$ref=$datos[ref];
-          $type=$datos[type];
-        	$check_in=$datos[check_in];
-        	$check_out=$datos[check_out];
-        	$destination=$datos[destination];
-        	$country=$datos[country];
-        	$price=$datos[price];
-          $discount=$datos[discount];
-          $img=$datos[img];
+      $travel=$datos[travel];
+      $ref=$datos[ref];
+      $type=$datos[type];
+      // $check_in=$datos[date];
+      // $check_out=$datos[check_out];
+      $destination=$datos[destination];
+      $country=$datos[country];
+      $price=$datos[price];
+      $discount=$datos[discount];
+      $img=$datos[img];
+      list($check_in, $check_out) = explode("-",$datos[date]); 
 
           foreach ($datos[services] as $indice) {
               $services=$services."$indice,";

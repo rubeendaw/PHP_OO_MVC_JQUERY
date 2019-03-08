@@ -30,9 +30,9 @@
               <a id="english"><img src="view/assets/images/flags/en.png" width="22px"></a>
               <a id="valencia"><img src="view/assets/images/flags/ca.png" width="22px"></a>
               <!-- <li><a href="#"><span class="icon icon-person"></span></a></li> -->
-              <li><a class="redheart" href="#"><span class="icon icon-heart"></span></a></li>
+              <li><a class="redheart" href="index.php?page=controller_like&op=view"><span class="icon icon-heart"></span></a></li>
               <li>
-                <a href="cart.html" class="site-cart">
+                <a href="index.php?page=controller_cart&op=view" class="site-cart">
                   <span class="icon icon-shopping_cart"></span>
                   <!-- <span class="count">2</span> -->
                 </a>
@@ -41,8 +41,8 @@
               <!-- <img id="avatar" src="https://api.adorable.io/avatars/30/pep@adorable.png"/> -->
               <li><a class="redheart" href="index.php?page=controller_login&op=logout"><span class="icon icon-exit_to_app"></span></a></li>
               <li>
-                <a class="site-menu-toggle js-menu-toggle d-inline-block d-md-none ml-md-0" href="index.php?page=controller_contact&op=view">
-                  <span class="icon-menu">HOLA</span>
+                <a class="site-menu-toggle js-menu-toggle d-inline-block d-md-none ml-md-0" href="index.php?page=controller_cart&op=view">
+                  <span class="icon-menu"></span>
                 </a>
               </li>
             </ul>

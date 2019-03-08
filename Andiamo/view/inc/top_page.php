@@ -15,13 +15,17 @@
     <link rel="stylesheet" href="view/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="view/assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="view/assets/css/carousel.min.css">
-
+    
     <link rel="stylesheet" href="view/assets/css/aos.css">
-
+    
     <link rel="stylesheet" href="view/assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=KEY"></script> -->
+    <!-- <script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://jqwidgets.com/public/jqwidgets/styles/jqx.base.css"> -->
+    <?php define("KEY", "AIzaSyA9T9nksTcdLFSZrxyiCnDc0loDBTDheUY"); ?>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo constant("KEY");?>&callback=initMap"></script>
+    <!-- AIzaSyA9T9nksTcdLFSZrxyiCnDc0loDBTDheUY&callback=initMap -->
   </head>
   <body>

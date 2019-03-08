@@ -106,6 +106,11 @@
 			}
 		break;
 
+        case 'regenid':
+            session_regenerate_id();
+            exit();
+        break;
+
         default;
             include("view/inc/error404.php");
             break;

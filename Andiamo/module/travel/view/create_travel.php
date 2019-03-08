@@ -46,7 +46,7 @@
                 </tr>
                 <tr>
                     <td class="text-black">Precio: </td>
-                    <td><input class="form-control type="text" id="price" name="price" placeholder="Ej: 200" value=""/></td>
+                    <td><input class="form-control" type="text" id="price" name="price" placeholder="Ej: 200" value=""/></td>
                     <td><font color="red">
                         <span id="error_price" class="error">
                             <?php
@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
                     <td class="text-black">Pais: </td>
-                    <td><input class="form-control type="text" id="country" name="country" placeholder="Ej: Italia" value=""/></td>
+                    <td><input class="form-control" type="text" id="country" name="country" placeholder="Ej: Italia" value=""/></td>
                     <td><font color="red">
                         <span id="error_country" class="error">
                             <?php
@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td class="text-black">Destino: </td>
-                    <td><input class="form-control type="text" id="destination" name="destination" placeholder="Ej: Venecia" value=""/></td>
+                    <td><input class="form-control" type="text" id="destination" name="destination" placeholder="Ej: Venecia" value=""/></td>
                     <td><font color="red">
                         <span id="error_destination" class="error">
                             <?php
@@ -101,12 +101,12 @@
                 <tr>
                     <td class="text-black">Servicios: </td>
                     <td>
-                        <input type="checkbox" id= "services" name="services" value="wifi"/>Wifi
-                        <input type="checkbox" id= "services" name="services" value="piscina"/>Piscina
-                        <input type="checkbox" id= "services" name="services" value="parking"/>Parking
-                        <input type="checkbox" id= "services" name="services" value="gimnasio"/>Gimnasio
-                        <input type="checkbox" id= "services" name="services" value="spa"/>Spa
-                        <input type="checkbox" id= "services" name="services" value="mascotas"/>Admite mascotas
+                        <input type="checkbox" id= "services[]" name="services[]" value="wifi"/>Wifi
+                        <input type="checkbox" id= "services[]" name="services[]" value="piscina"/>Piscina
+                        <input type="checkbox" id= "services[]" name="services[]" value="parking"/>Parking
+                        <input type="checkbox" id= "services[]" name="services[]" value="gimnasio"/>Gimnasio
+                        <input type="checkbox" id= "services[]" name="services[]" value="spa"/>Spa
+                        <input type="checkbox" id= "services[]" name="services[]" value="mascotas"/>Admite mascotas
                     </td>
                     <td><font color="red">
                         <span id="error_servicios[]" class="error">
@@ -117,7 +117,14 @@
                     </font>
                   </td>
                 </tr>
-
+                <tr>
+                    <td class="text-black">Fechas: </td>
+                    <td><input type="text" id="date" name="date" class="form-control" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td class="text-black">Imagen: </td>
+                    <td><input class="form-control" type="text" id="img" name="img" placeholder="Ej: venecia.jpg" value=""/></td>
+                </tr>
                 <tr>
                     <td><input class="btn btn-success" type="button" name="create" id="create" value="Enviar" onclick="validate_travel()"/></td>
                     <td align="right"><a class="btn btn-danger" href="index.php?page=controller_travel&op=list">Volver</a></td>

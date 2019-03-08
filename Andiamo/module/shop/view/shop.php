@@ -108,20 +108,22 @@
   </div>
   <div>
     <h1>Busqueda en APIs</h1>
+    <label>Destino</label>
     <select id="origin">
 				      <option value="MAD">Madrid</option>
 				      <option value="LON">Londres</option>
 				      <option value="MIA">Miami</option>
 			</select>
-      <input type="text" size="23" id="price" name="api" />
-      <select id="currency">
-				      <option value="EUR">Euro</option>
-				      <option value="USD">Dolar</option>
-				      <option value="GBP">Libra</option>
+      <!-- <input type="text" size="23" id="price" name="api" /> -->
+      <label>Estrellas</label>
+      <select id="rating">
+				      <option value="3">3</option>
+				      <option value="4">4</option>
+				      <option value="5">5</option>
 			</select>
       <input type="button" name="buscar" id="buscar" value="Buscar">
       <div id="results"></div>
   </div>
 </div>
 
-<div id="details"> 
+<!-- <div id="details">  -->

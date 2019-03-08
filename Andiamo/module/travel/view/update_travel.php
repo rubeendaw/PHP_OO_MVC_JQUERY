@@ -238,7 +238,22 @@
                     </font>
                   </td>
                 </tr>
-
+                <tr>
+                    <td class="text-black">Fechas: </td>
+                    <td><input type="text" id="date" name="date" value="<?php echo $travel['date'];?>"></td>
+                </tr>
+                <tr>
+                    <td>Imagen: </td>
+                    <td><input type="text" id="img" name="img" placeholder="Ej: Venecia.jpg" value="<?php echo $travel['img'];?>"/></td>
+                    <td><font color="red">
+                        <span id="error_img" class="error">
+                            <?php
+                                echo "$error_img";
+                            ?>
+                        </span>
+                    </font>
+                    </td>
+                </tr>
                 <tr>
                     <td><input class="btn btn-success" type="button" name="update" id="update" value="Enviar" onclick="validate_travel_update()"/></td>
                     <td align="right"><a class="btn btn-danger" href="index.php?page=controller_travel&op=list">Volver</a></td>

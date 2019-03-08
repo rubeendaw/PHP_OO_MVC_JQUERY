@@ -70,9 +70,13 @@ $(document).ready(function () {
     var id = this.getAttribute('id');
     // document.getElementById("details_cars").style.visibility = "visible";
     //alert(id);
-
+    console.log(id);
+    
     $.get("module/travel/controller/controller_travel.php?op=read_modal&modal=" + id, function (data, status) {
+      console.log("Entro3");
+      console.log(data);
       var json = JSON.parse(data);
+      console.log(json);
       //var stringdata = JSON.parse(json);
       //console.log(data);
 
