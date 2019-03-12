@@ -1,12 +1,10 @@
 <?php
   $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/Andiamo/';
   include($path . "module/cart/model/DAOcart.php");
+  @session_start();
   if (isset($_SESSION["tiempo"])) {  
       $_SESSION["tiempo"] = time();
   }
-    if (!isset($_SESSION)){
-      session_start();
-    }
     switch($_GET['op']){
 
         case 'view':
@@ -36,16 +34,21 @@
         break;
 
         case 'checkout':
-          $data = json_decode($_POST['data']);
-          $user = $_SESSION['users']['nick'];
-          $daocart = new DAOCart();
-          $rdo = $daocart->insert_cart($data, $user);
-          if ($rdo == true){
-            echo json_encode("correcto");
+          $data = json_decode($_GET['data']);
+          $user = $_SESSION['username'];
+          if (empty($user)) {
+            echo json_encode("error_sesion");
             exit();
           }else{
-            echo json_encode("error");
-            exit();
+            $daocart = new DAOcart();
+            $rdo = $daocart->insert_cart($data, $user);
+            if ($rdo == true){
+              echo json_encode("correcto");
+              exit();
+            }else{
+              echo json_encode("error");
+              exit();
+            }
           }
         break;
 

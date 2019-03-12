@@ -15,7 +15,7 @@ $(document).ready(function(){
                                       + "<h3><a class='details'>" + list.destination + "</a></h3>"
                                       + "<p class='mb-0'>" + list.country + "</p>"
                                       + "<p class='text-primary font-weight-bold'>" + list.price +"€</p>"
-                                      + "<span onclick='InsertCarr()' class='icon icon-shopping_cart'></span>"
+                                      + "<span id='" + list.id + "' class='InsertCarr icon icon-shopping_cart'></span>"
                                       + "</div>";
                                       + "</div>";
               document.getElementById("list_travels").appendChild(ElementDiv);
@@ -40,7 +40,7 @@ $(document).ready(function(){
                                       + "<h3><a>" + list.destination + "</a></h3>"
                                       + "<p class='mb-0'>" + list.country + "</p>"
                                       + "<p class='icon icon-shopping_cart text-primary font-weight-bold'>" + list.price +"€</p>"
-                                      + "<span onclick='InsertCarr()' class='icon icon-shopping_cart'></span>"
+                                      + "<span id='" + list.id + "' class='InsertCarr icon icon-shopping_cart'></span>"
                                       + "</div>";
                                       + "</div>";
               document.getElementById("list_travels").appendChild(ElementDiv);
@@ -67,7 +67,7 @@ $(document).ready(function(){
                                     + "<p>" + json.country + "</p>"
                                     + "<p class='mb-4'>Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>"
                                     + "<p><strong class='icon icon-shopping_cart text-primary h4'>" + json.price + "€</strong></p>"
-                                    + "<span onclick='InsertCarr()' class='icon icon-shopping_cart'></span>"
+                                    + "<span id='" + list.id + "' class='InsertCarr icon icon-shopping_cart'></span>"
                                     + "</div>"
               document.getElementById("details").appendChild(ElementDiv);
             });
